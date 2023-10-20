@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --orange: #FD9340;
+  --white: white;
+  --gray: #D2D2D2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('./assets/pattern_small.png');
+  background-color: #F6F6F6;
+  background-repeat: repeat;
+  background-position: left bottom;
+  font-family: 'Roboto', sans-serif;
+  color: #171717;
+}
+
+.footer {
+  background-color: #171717;
+  width: 100%;
+  padding: 120px 0 120px 0;
+  margin-top: 120px;
+}
+
+.footer, .footer__copyright, .footer__year {
+  color: white;
+  text-align: center;
+}
+
+.footer__year {
+  font-weight: 700;
+  margin-top: 13px;
+}

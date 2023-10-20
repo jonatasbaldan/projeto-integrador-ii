@@ -1,0 +1,26 @@
+
+.form__div {
+  margin-top: 35px;
+}
+
+.form__input {
+  padding: 25px 14px 9px 14px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: solid 1px var(--gray);
+  display: block;
+  width: 360px;
+  color: #1e1e1e;
+}
+
+.form__input::placeholder {
+  color: #939393;
+}
+
+.form__label {
+  font-size: 14px;
+  position: absolute;
+  margin-left: 14px;
+  margin-top: 7px;
+  color: var(--orange);
+}
