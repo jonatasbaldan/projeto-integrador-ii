@@ -22,10 +22,6 @@
   width: 70%;
 }
 
-.bold {
-  font-weight: 700;
-}
-
 .login__button {
   background-color: var(--orange);
   padding: 14px;

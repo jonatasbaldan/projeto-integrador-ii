@@ -11,6 +11,11 @@
   box-sizing: border-box;
 }
 
+a {
+  color: var(--orange);
+  text-decoration: none;
+}
+
 body {
   background-image: url('./assets/pattern_small.png');
   background-color: #F6F6F6;
@@ -18,6 +23,10 @@ body {
   background-position: left bottom;
   font-family: 'Roboto', sans-serif;
   color: #171717;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .footer {
