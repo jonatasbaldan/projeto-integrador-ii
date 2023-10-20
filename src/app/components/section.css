@@ -1,0 +1,21 @@
+.section {
+  background-color: white;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 50px;
+  border: solid 1px var(--gray);
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 425px) {
+  .section {
+    background-color: inherit;
+    margin: 0;
+    max-width: 100%;
+    padding: 20px;
+    border: none;
+    border-radius: 0;
+  }
+}
