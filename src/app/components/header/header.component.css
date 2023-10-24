@@ -1,18 +1,15 @@
 .company-menu {
-  max-width: 1024px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  margin-top: 120px;
   margin-bottom: 30px;
 }
 
 @media screen and (max-width: 425px) {
   .company-menu {
-    margin-top: 30px;
     margin-left: 20px;
   }
-
 }
 
 .company-menu__logo {
@@ -73,11 +70,11 @@
 
 .header__small-button__text {
   margin-top: 12px;
+  white-space: nowrap;
 }
 
 .header__button {
   justify-self: end;
-
 }
 
 .header__button__link {
@@ -99,7 +96,6 @@
   width: 80px;
   position: relative;
   bottom: 14px;
-
 }
 
 .header__button__text {
@@ -108,3 +104,4 @@
   line-height: 1.4;
   color: white;
 }
+
