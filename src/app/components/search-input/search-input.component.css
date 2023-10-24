@@ -1,0 +1,25 @@
+.search__input {
+  padding: 20px 13px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: solid 1px var(--gray);
+  display: block;
+  width: 400px;
+  color: #1e1e1e;
+}
+
+.search__input::placeholder {
+  color: #939393;
+}
+
+.search__link {
+  display: inline;
+  position: relative;
+  padding: 20px 30px;
+  bottom: 40px;
+  left: 323px;
+}
+
+.link__image {
+  width: 18px;
+}

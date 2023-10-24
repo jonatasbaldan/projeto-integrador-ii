@@ -1,0 +1,17 @@
+.schedules {
+  margin-top: 60px;
+}
+
+.title {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.arrow {
+  width: 22px;
+}
+
+.search {
+  margin: 40px auto 60px auto;
+}

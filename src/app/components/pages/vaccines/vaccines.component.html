@@ -1,0 +1,25 @@
+<div class="vaccines">
+  <app-company-menu></app-company-menu>
+  <section class="section">
+    <a href="https://" class="link_back">
+      <img class="arrow" src="../../../../assets/arrow-left.svg" alt="Imagem flecha para a esquerda">
+    </a>
+    <h1 class="title">Todos as <span class="bold">vacinas</span></h1>
+    <div class="search">
+      <app-search-input
+      placeholder="Nome do animal"
+      link="https://"
+      ></app-search-input>
+    </div>
+    <div class="table">
+      <app-table
+    heads-name="['nome', 'vacina', 'data']"
+    rows="[['Pedrinho', 'rubéula', '20/03/2024 - 13:30'],
+    ['Pedrinho', 'gripe', '20/03/2024 - 13:30'],
+    ['Pedrinho', 'raiva', '20/03/2024 - 13:30'],
+    ['Pedrinho', 'febre amarela', '20/03/2024 - 13:30']]"
+    table-type="vaccine"
+    ></app-table>
+    </div>
+  </section>
+  </div>

@@ -1,0 +1,36 @@
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: solid 1px var(--gray);
+}
+
+
+th {
+  font-weight: 600;
+  color: var(--gray);
+  text-align: left;
+  padding-bottom: 16px;
+}
+
+td {
+  border-top: solid 1px var(--gray);
+  padding: 15px 0;
+  margin: 0px 10px;
+  width: 20%;
+}
+
+td:first-child, .agendado, .cancelado, .pendente {
+  font-weight: 600;
+}
+
+.agendado {
+  color: #18A526;
+}
+
+.cancelado {
+  color: #A00C0C;
+}
+
+.pendente {
+  color: var(--orange);
+}

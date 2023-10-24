@@ -1,0 +1,25 @@
+<div [ngSwitch]="tableType">
+  <div *ngSwitchCase="'vaccine'">
+    <table>
+      <tr>
+        <th *ngFor="let head of tableHeads">{{ head }}</th>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td *ngFor="let rowColumn of row">{{ rowColumn }}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngSwitchCase="'schedule'">
+    <table>
+      <tr>
+        <th *ngFor="let head of tableHeads">{{ head }}</th>
+      </tr>
+      <tr *ngFor="let row of rows">
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td [ngClass]="row[3]">{{ row[3] }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
