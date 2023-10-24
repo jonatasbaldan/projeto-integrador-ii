@@ -1,6 +1,6 @@
 .section {
   background-color: white;
-  max-width: 1024px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 50px;
   border: solid 1px var(--gray);
