@@ -1,2 +1,26 @@
-<app-header></app-header>
-<p>home works!</p>
+<header class="header"><app-header></app-header></header>
+<section class="section">
+  <app-small-table
+title="Agendamentos marcados"
+heads-name="['nome', 'tipo de agendamento', 'data']"
+rows="[['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30']]"
+link="https://"
+link-name="Ver todos os agendamentos"
+></app-small-table>
+</section>
+
+<section class="section">
+  <app-small-table
+  title="Vacinas aplicadas"
+  heads-name="['nome', 'tipo de vacina', 'data']"
+  rows="[['Pedrinho', 'Raiva', '20/03/2024 - 13:30'],
+  ['Pedrinho', 'Rubéula', '20/03/2024 - 13:30'],
+  ['Pedrinho', 'Gripe', '20/03/2024 - 13:30'],
+  ['Pedrinho', 'Gripe', '20/03/2024 - 13:30']]"
+  link="https://"
+  link-name="Ver todas as vacinas"
+  ></app-small-table>
+</section>
