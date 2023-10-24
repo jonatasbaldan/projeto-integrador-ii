@@ -1,0 +1,12 @@
+<section class="section">
+  <h2>{{ title }}</h2>
+  <table>
+    <tr>
+      <th *ngFor="let head of tableHeads">{{ head }}</th>
+    </tr>
+    <tr *ngFor="let row of rows">
+      <td *ngFor="let rowColumn of row">{{ rowColumn }}</td>
+    </tr>
+  </table>
+  <a [href]="link" class="link">{{ linkName }}<img class="svg" src="../../../assets/arrow.svg"></a>
+</section>

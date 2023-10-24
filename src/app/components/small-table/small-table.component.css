@@ -1,0 +1,32 @@
+table {
+  margin-top: 57px;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: solid 1px var(--gray);
+}
+
+
+th {
+  font-weight: 600;
+  color: var(--gray);
+  text-align: left;
+  padding-bottom: 16px;
+}
+
+td {
+  border-top: solid 1px var(--gray);
+  padding: 15px 0;
+  margin: 0px 10px;
+  width: 20%;
+}
+
+td:first-child {
+  font-weight: 600;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}
