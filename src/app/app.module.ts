@@ -7,6 +7,13 @@ import { LoginComponent } from './components/pages/login/login.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { InputComponent } from './components/input/input.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SmallTableComponent } from './components/small-table/small-table.component';
+import { SchedulesComponent } from './components/pages/schedules/schedules.component';
+import { TableComponent } from './components/table/table.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
+import { VaccinesComponent } from './components/pages/vaccines/vaccines.component';
+import { CompanyMenuComponent } from './components/company-menu/company-menu.component';
+import { MakeScheduleComponent } from './components/pages/make-schedule/make-schedule.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +21,14 @@ import { HeaderComponent } from './components/header/header.component';
     LoginComponent,
     HomeComponent,
     InputComponent,
-    HeaderComponent
+    HeaderComponent,
+    SmallTableComponent,
+    SchedulesComponent,
+    TableComponent,
+    SearchInputComponent,
+    VaccinesComponent,
+    CompanyMenuComponent,
+    MakeScheduleComponent
   ],
   imports: [
     BrowserModule,
