@@ -1,0 +1,17 @@
+.company-menu {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 425px) {
+  .company-menu {
+    margin-left: 20px;
+  }
+}
+
+.company-menu__logo {
+  width: 130px;
+}
