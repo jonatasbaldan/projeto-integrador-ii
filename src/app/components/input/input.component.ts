@@ -6,9 +6,16 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-  @Input() labelName: String = '';
-  @Input() placeholder: String = '';
-  @Input() inputType: String = '';
+  @Input({
+    alias: 'label-name'
+  }) labelName: String = '';
+
+  @Input()
+  placeholder: String = '';
+
+  @Input({
+    alias: 'input-type'
+  }) inputType: String = '';
 
   constructor() { }
 
