@@ -1,25 +1,57 @@
-<app-company-menu></app-company-menu>
+<section class="modal --is-disable">
+  <div class="modal__section">
+    <div class="modal__image">
+    </div>
+    <div class="modal__text">
+      <h2 class="modal__title">Agendamento pendente!</h2>
+      <p class="modal__paragraph">O agendamento foi enviado para nós e <span class="--is-bold">entraremos em contato com você para confirmar.</span> Qualquer dúvidas, por favor, entre em contato com a gente!</p>
+      <button class="submit-button">Eu entendo</button>
+    </div>
+  </div>
+</section>
+
+<app-company-menu class="logo"></app-company-menu>
 <div class="make-schedule">
   <section class="section">
-    <select name="animal" id="animal">
-      <option value="bolinha">Bolinha</option>
-      <option value="cadusa">Cadusa</option>
-      <option value="Maria">Maria</option>
-    </select>
-    <select name="agendamento" id="agendamento">
-      <option value="bolinha">Banho e tosa</option>
-      <option value="cadusa">Consulta</option>
-      <option value="Maria">Vacina</option>
-    </select>
-    <app-input
-    label-name="Data do serviço"
-    input-type="date"
-    ></app-input>
-    <app-input
-    label-name="Descrição do serviço (opcional)"
-    placeholder="ex: Ele está com uma ferida no braço"
-    input-type="text"
-    ></app-input>
-    <button class="submit-button">Efetuar Agendamento</button>
+    <form action="https://">
+
+      <div class="animal-and-agendamento">
+        <div class="form__animais">
+          <label for="animal" class="form__label">Nome do pet</label>
+          <select name="animal" id="animal" class="form__input">
+            <option value="bolinha">Bolinha</option>
+            <option value="cadusa">Cadusa</option>
+            <option value="Maria">Maria</option>
+          </select>
+        </div>
+
+        <div class="form__agendamento">
+          <label for="agendamento" class="form__label">Tipo de agendamento</label>
+          <select name="agendamento" id="agendamento" class="form__input">
+            <option value="bolinha">Banho e tosa</option>
+            <option value="cadusa">Consulta</option>
+            <option value="Maria">Vacina</option>
+          </select>
+        </div>
+      </div>
+
+      <app-input
+      label-name="Data do serviço"
+      input-type="date"
+      width="300px"
+      class="form__date"
+      ></app-input>
+
+      <div class="form__text-area">
+        <label for="descricao" class="form__label">Descrição do serviço (opcional)</label>
+        <textarea
+        class="form__input"
+        id="descricao"
+        placeholder="ex: Ele está com uma ferida no braço"
+        ></textarea>
+      </div>
+
+      <button class="submit-button">Efetuar Agendamento</button>
+    </form>
   </section>
 </div>

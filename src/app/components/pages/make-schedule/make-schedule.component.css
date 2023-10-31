@@ -1,3 +1,64 @@
+.--is-disable {
+  display: none;
+}
+
+.--is-enable {
+  display: block;
+}
+
+.--is-bold {
+  font-weight: 700;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: hsla(0, 0%, 12%, 0.062);
+  z-index: 99;
+}
+
+.modal__section {
+  margin: 60px auto;
+  width: 50%;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.modal__image {
+  background: url('../../../../assets/modal-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+  width: 100%;
+  border: solid 1px var(--gray);
+  border-bottom: 0;
+  border-radius: 14px 14px 0 0;
+}
+
+.modal__text {
+  padding: 30px;
+  border: solid 1px var(--gray);
+  border-top: 0;
+  border-radius: 0 0 14px 14px;
+}
+
+.modal__paragraph {
+  margin: 30px 0;
+  line-height: 24px;
+}
+
+.logo {
+  padding: 60px;
+}
+
+.animal-and-agendamento {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
 
 .submit-button {
   background-color: var(--orange);
@@ -6,7 +67,8 @@
   border: none;
   border-radius: 12px;
   font-weight: 600;
-  max-width: 360px;
+  max-width: 460px;
+  min-width: 300px;
   margin-top: 60px;
   font-size: 14px;
   letter-spacing: 1px;
@@ -14,4 +76,36 @@
 
 .submit-button:hover {
   cursor: pointer;
+}
+
+.form__input {
+  padding: 25px 14px 9px 14px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: solid 1px var(--gray);
+  display: block;
+  width: 300px;
+  color: #1e1e1e;
+}
+
+select {
+  background-color: white;
+}
+
+
+.form__input::placeholder {
+  color: #939393;
+}
+
+.form__label {
+  font-size: 14px;
+  position: absolute;
+  margin-left: 14px;
+  margin-top: 7px;
+  color: var(--orange);
+}
+
+.form__date {
+  display: block;
+  margin: 30px 0;
 }
