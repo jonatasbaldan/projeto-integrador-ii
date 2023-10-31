@@ -17,6 +17,10 @@ export class InputComponent {
     alias: 'input-type'
   }) inputType: String = '';
 
+  @Input({
+    alias: 'width'
+  }) width: String = '360px';
+
   constructor() { }
 
   ngOnInit(): void {
