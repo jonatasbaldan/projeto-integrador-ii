@@ -27,7 +27,7 @@
 }
 
 .modal__image {
-  background: url('../../../../assets/modal-image.jpg');
+  background: url("../../../../assets/modal-image.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -52,6 +52,13 @@
 
 .logo {
   padding: 60px;
+}
+
+.title {
+  margin-top: 40px;
+  margin-bottom: 60px;
+  font-size: 24px;
+  font-weight: 500;
 }
 
 .animal-and-agendamento {
@@ -91,7 +98,6 @@
 select {
   background-color: white;
 }
-
 
 .form__input::placeholder {
   color: #939393;

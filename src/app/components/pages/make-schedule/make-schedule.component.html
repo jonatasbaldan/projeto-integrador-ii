@@ -1,10 +1,15 @@
 <section class="modal --is-disable">
   <div class="modal__section">
-    <div class="modal__image">
-    </div>
+    <div class="modal__image"></div>
     <div class="modal__text">
       <h2 class="modal__title">Agendamento pendente!</h2>
-      <p class="modal__paragraph">O agendamento foi enviado para nós e <span class="--is-bold">entraremos em contato com você para confirmar.</span> Qualquer dúvidas, por favor, entre em contato com a gente!</p>
+      <p class="modal__paragraph">
+        O agendamento foi enviado para nós e
+        <span class="--is-bold"
+          >entraremos em contato com você para confirmar.</span
+        >
+        Qualquer dúvidas, por favor, entre em contato com a gente!
+      </p>
       <button class="submit-button">Eu entendo</button>
     </div>
   </div>
@@ -13,8 +18,10 @@
 <app-company-menu class="logo"></app-company-menu>
 <div class="make-schedule">
   <section class="section">
+    <h1 class="title">
+      Efetue o <span class="--is-bold">agendamento</span> do seu pet!
+    </h1>
     <form action="https://">
-
       <div class="animal-and-agendamento">
         <div class="form__animais">
           <label for="animal" class="form__label">Nome do pet</label>
@@ -26,7 +33,9 @@
         </div>
 
         <div class="form__agendamento">
-          <label for="agendamento" class="form__label">Tipo de agendamento</label>
+          <label for="agendamento" class="form__label"
+            >Tipo de agendamento</label
+          >
           <select name="agendamento" id="agendamento" class="form__input">
             <option value="bolinha">Banho e tosa</option>
             <option value="cadusa">Consulta</option>
@@ -36,18 +45,20 @@
       </div>
 
       <app-input
-      label-name="Data do serviço"
-      input-type="date"
-      width="300px"
-      class="form__date"
+        label-name="Data do serviço"
+        input-type="date"
+        width="300px"
+        class="form__date"
       ></app-input>
 
       <div class="form__text-area">
-        <label for="descricao" class="form__label">Descrição do serviço (opcional)</label>
+        <label for="descricao" class="form__label"
+          >Descrição do serviço (opcional)</label
+        >
         <textarea
-        class="form__input"
-        id="descricao"
-        placeholder="ex: Ele está com uma ferida no braço"
+          class="form__input"
+          id="descricao"
+          placeholder="ex: Ele está com uma ferida no braço"
         ></textarea>
       </div>
 
