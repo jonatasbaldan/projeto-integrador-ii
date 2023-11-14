@@ -1,0 +1,35 @@
+.section {
+  margin: 0 20px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--gray);
+  padding: 18px 0;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.type {
+  font-size: 14px;
+  color: #666666;
+}
+
+.data {
+  font-weight: 500;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+}

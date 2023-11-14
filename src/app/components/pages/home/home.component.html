@@ -1,26 +1,50 @@
 <header class="header"><app-header></app-header></header>
-<section class="section">
+<section class="section schedules">
   <app-small-table
-title="Agendamentos marcados"
-heads-name="['nome', 'tipo de agendamento', 'data']"
-rows="[['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+    *ngIf="isDesktop"
+    title="Agendamentos marcados"
+    heads-name="['nome', 'tipo de agendamento', 'data']"
+    rows="[['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
 ['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
 ['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
 ['Pedrinho', 'vacinação', '20/03/2024 - 13:30']]"
-link="https://"
-link-name="Ver todos os agendamentos"
-></app-small-table>
+    link="https://"
+    link-name="Ver todos os agendamentos"
+  ></app-small-table>
+
+  <app-small-table-mobile
+    *ngIf="isMobile"
+    title="Agendamentos marcados"
+    rows="[['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30'],
+['Pedrinho', 'vacinação', '20/03/2024 - 13:30']]"
+    link="https://"
+    link-name="Ver todos os agendamentos"
+  ></app-small-table-mobile>
 </section>
 
-<section class="section">
+<section class="section vaccines">
   <app-small-table
-  title="Vacinas aplicadas"
-  heads-name="['nome', 'tipo de vacina', 'data']"
-  rows="[['Pedrinho', 'Raiva', '20/03/2024 - 13:30'],
+    *ngIf="isDesktop"
+    title="Vacinas aplicadas"
+    heads-name="['nome', 'tipo de vacina', 'data']"
+    rows="[['Pedrinho', 'Raiva', '20/03/2024 - 13:30'],
   ['Pedrinho', 'Rubéula', '20/03/2024 - 13:30'],
   ['Pedrinho', 'Gripe', '20/03/2024 - 13:30'],
   ['Pedrinho', 'Gripe', '20/03/2024 - 13:30']]"
-  link="https://"
-  link-name="Ver todas as vacinas"
+    link="https://"
+    link-name="Ver todas as vacinas"
   ></app-small-table>
+
+  <app-small-table-mobile
+    *ngIf="isMobile"
+    title="Vacinas aplicadas"
+    rows="[['Pedrinho', 'Raiva', '20/03/2024 - 13:30'],
+['Pedrinho', 'Rubéula', '20/03/2024 - 13:30'],
+['Pedrinho', 'Gripe', '20/03/2024 - 13:30'],
+['Pedrinho', 'Gripe', '20/03/2024 - 13:30']]"
+    link="https://"
+    link-name="Ver todas as vacinas"
+  ></app-small-table-mobile>
 </section>

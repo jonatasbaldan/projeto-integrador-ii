@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 :root {
-  --orange: #FD9340;
+  --orange: #fd9340;
   --white: white;
-  --gray: #D2D2D2;
+  --gray: #d2d2d2;
 }
 
 * {
@@ -20,21 +20,20 @@ a {
 }
 
 body {
-  background-image: url('./assets/pattern_small.png');
-  background-color: #F6F6F6;
+  background-image: url("./assets/pattern_small.png");
+  background-color: #f6f6f6;
   background-repeat: repeat;
   background-position: left bottom;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #3c3c3c;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   body {
     background: none;
     background-color: white;
   }
 }
-
 
 .bold {
   font-weight: 700;
@@ -47,7 +46,9 @@ body {
   margin-top: 120px;
 }
 
-.footer, .footer__copyright, .footer__year {
+.footer,
+.footer__copyright,
+.footer__year {
   color: white;
   text-align: center;
 }

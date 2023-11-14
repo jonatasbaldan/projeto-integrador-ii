@@ -14,6 +14,7 @@ import { SearchInputComponent } from './components/search-input/search-input.com
 import { VaccinesComponent } from './components/pages/vaccines/vaccines.component';
 import { CompanyMenuComponent } from './components/company-menu/company-menu.component';
 import { MakeScheduleComponent } from './components/pages/make-schedule/make-schedule.component';
+import { SmallTableMobileComponent } from './components/small-table-mobile/small-table-mobile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MakeScheduleComponent } from './components/pages/make-schedule/make-sch
     SearchInputComponent,
     VaccinesComponent,
     CompanyMenuComponent,
-    MakeScheduleComponent
+    MakeScheduleComponent,
+    SmallTableMobileComponent
   ],
   imports: [
     BrowserModule,

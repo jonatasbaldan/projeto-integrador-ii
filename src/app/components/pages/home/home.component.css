@@ -5,3 +5,9 @@
 .section {
   margin-top: 40px;
 }
+
+@media screen and (max-width: 768px) {
+  .vaccines {
+    margin-top: 60px;
+  }
+}

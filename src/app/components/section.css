@@ -9,7 +9,7 @@
   border-radius: 30px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .section {
     background-color: inherit;
     margin: 0;
