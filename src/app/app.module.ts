@@ -15,6 +15,7 @@ import { VaccinesComponent } from './components/pages/vaccines/vaccines.componen
 import { CompanyMenuComponent } from './components/company-menu/company-menu.component';
 import { MakeScheduleComponent } from './components/pages/make-schedule/make-schedule.component';
 import { SmallTableMobileComponent } from './components/small-table-mobile/small-table-mobile.component';
+import { TableMobileComponent } from './components/table-mobile/table-mobile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SmallTableMobileComponent } from './components/small-table-mobile/small
     VaccinesComponent,
     CompanyMenuComponent,
     MakeScheduleComponent,
-    SmallTableMobileComponent
+    SmallTableMobileComponent,
+    TableMobileComponent
   ],
   imports: [
     BrowserModule,

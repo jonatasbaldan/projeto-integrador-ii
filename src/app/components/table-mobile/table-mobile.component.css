@@ -1,0 +1,43 @@
+.section {
+  margin: 0 20px;
+}
+
+.title {
+  margin-bottom: 16px;
+}
+
+.table {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--gray);
+  padding: 18px 0;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.type {
+  font-size: 14px;
+  color: #666666;
+}
+
+.data {
+  font-weight: 500;
+}
+
+.agendado {
+  font-weight: 600;
+  color: #18a526;
+}
+
+.cancelado {
+  font-weight: 600;
+  color: #a00c0c;
+}
+
+.pendente {
+  font-weight: 600;
+  color: var(--orange);
+}
