@@ -21,9 +21,17 @@
 
 .modal__section {
   margin: 60px auto;
-  width: 50%;
+  width: 450px;
   background-color: white;
   border-radius: 14px;
+  box-shadow: -1px 1px 38px -10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: -1px 1px 38px -10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: -1px 1px 38px -10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .modal__section {
+  }
 }
 
 .modal__image {
