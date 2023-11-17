@@ -1,9 +1,9 @@
 table {
+  width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
   border-bottom: solid 1px var(--gray);
 }
-
 
 th {
   font-weight: 600;
@@ -19,16 +19,19 @@ td {
   width: 20%;
 }
 
-td:first-child, .agendado, .cancelado, .pendente {
+td:first-child,
+.agendado,
+.cancelado,
+.pendente {
   font-weight: 600;
 }
 
 .agendado {
-  color: #18A526;
+  color: #18a526;
 }
 
 .cancelado {
-  color: #A00C0C;
+  color: #a00c0c;
 }
 
 .pendente {

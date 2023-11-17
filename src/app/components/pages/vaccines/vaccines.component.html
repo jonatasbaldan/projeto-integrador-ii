@@ -18,19 +18,13 @@
     <div class="table">
       <app-table
         *ngIf="isDesktop"
-        heads-name="['nome', 'vacina', 'data']"
-        rows="[['Pedrinho', 'rubéula', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'gripe', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'raiva', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'febre amarela', '20/03/2024 - 13:30']]"
+        heads-name="['nome', 'vacina', 'data', 'situação']"
+        [rows]="getAllVacinas()"
         table-type="vaccine"
       ></app-table>
       <app-table-mobile
         *ngIf="isMobile"
-        rows="[['Pedrinho', 'rubéula', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'gripe', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'raiva', '20/03/2024 - 13:30'],
-    ['Pedrinho', 'febre amarela', '20/03/2024 - 13:30']]"
+        [rows]="getAllVacinas()"
         table-type="vaccine"
       >
       </app-table-mobile>

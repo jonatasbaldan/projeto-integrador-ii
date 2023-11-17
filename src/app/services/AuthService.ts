@@ -5,33 +5,28 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   private isLoggedIn = false;
-  private authToken: string | null = null;
+  private authTokenKey = 'auth_token';
 
-  constructor() {}
+  constructor() {
+    this.isLoggedIn = !!sessionStorage.getItem(this.authTokenKey);
+  }
 
-  // Verificar se o usuário está logado
   public isAuthenticated(): boolean {
+    console.log(this.isLoggedIn);
     return this.isLoggedIn;
   }
 
-  // Setar o token após o login
   public setAuthToken(token: string): void {
-    this.authToken = token;
+    sessionStorage.setItem(this.authTokenKey, token);
     this.isLoggedIn = true;
-    // Aqui você pode guardar o token no localStorage ou sessionStorage
-    // Exemplo: localStorage.setItem('token', token);
   }
 
-  // Obter o token
   public getAuthToken(): string | null {
-    return this.authToken;
+    return sessionStorage.getItem(this.authTokenKey);
   }
 
-  // Método para fazer logout
   public logout(): void {
+    sessionStorage.removeItem(this.authTokenKey);
     this.isLoggedIn = false;
-    this.authToken = null;
-    // Limpar o token do localStorage ou sessionStorage
-    // Exemplo: localStorage.removeItem('token');
   }
 }

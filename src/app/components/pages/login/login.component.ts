@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoginControllerService } from 'src/app/services/login-controller.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +7,23 @@ import { LoginControllerService } from 'src/app/services/login-controller.servic
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  constructor(private controller: LoginControllerService) {}
+  cpf: string = '';
+  senha: string = '';
+
+  constructor(private controller: LoginService) {}
 
   logar() {
     console.log('logado');
-    console.log(this.controller.login());
+    this.controller.login(this.cpf, this.senha);
+    console.log(this.cpf);
+    console.log(this.senha);
+  }
+
+  getCpf(value: string = '') {
+    this.cpf = value;
+  }
+
+  getSenha(value: string = '') {
+    this.senha = value;
   }
 }

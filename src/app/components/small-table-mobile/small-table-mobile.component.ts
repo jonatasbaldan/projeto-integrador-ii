@@ -23,7 +23,7 @@ export class SmallTableMobileComponent implements OnInit {
           .trim()
           .replace('[', '')
           .replace(']', '')
-          .split(', ')
+          .split(',')
       );
     },
   })

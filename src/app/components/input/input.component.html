@@ -8,7 +8,8 @@
     name="user_password"
     class="form__input"
     placeholder="{{ placeholder }}"
-    style="width: {{ width }};"
+    style="width: {{ width }}"
+    (input)="onInputChange($event)"
     required
   />
 </div>

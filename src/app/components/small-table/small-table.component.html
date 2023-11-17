@@ -5,7 +5,9 @@
       <th *ngFor="let head of tableHeads">{{ head }}</th>
     </tr>
     <tr *ngFor="let row of rows">
-      <td *ngFor="let rowColumn of row">{{ rowColumn }}</td>
+      <td>{{ row[0] }}</td>
+      <td>{{ row[1] }}</td>
+      <td>{{ row[2] }}</td>
     </tr>
   </table>
   <a [routerLink]="link" class="link"

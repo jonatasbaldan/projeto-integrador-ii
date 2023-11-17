@@ -1,29 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input',
   templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  styleUrls: ['./input.component.css'],
 })
 export class InputComponent {
   @Input({
-    alias: 'label-name'
-  }) labelName: String = '';
+    alias: 'label-name',
+  })
+  labelName: String = '';
 
   @Input()
   placeholder: String = '';
 
   @Input({
-    alias: 'input-type'
-  }) inputType: String = '';
+    alias: 'input-type',
+  })
+  inputType: String = '';
 
   @Input({
-    alias: 'width'
-  }) width: String = '360px';
+    alias: 'width',
+  })
+  width: String = '360px';
 
-  constructor() { }
+  @Output() valor = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  onInputChange(event: any) {
+    const valueEvent = event.target.value;
+    this.valor.emit(valueEvent);
   }
-
 }

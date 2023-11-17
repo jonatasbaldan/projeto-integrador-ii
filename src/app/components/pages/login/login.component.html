@@ -12,11 +12,13 @@
       label-name="cpf"
       placeholder="123-456-789-01"
       input-type="text"
+      (valor)="getCpf($event)"
     ></app-input>
     <app-input
       label-name="password"
       placeholder="*******"
       input-type="password"
+      (valor)="getSenha($event)"
     ></app-input>
   </form>
 

@@ -1,4 +1,4 @@
-<section class="modal --is-disable">
+<section [ngClass]="modalClasses">
   <div class="modal__section">
     <div class="modal__image"></div>
     <div class="modal__text">
@@ -10,7 +10,9 @@
         >
         Qualquer dúvidas, por favor, entre em contato com a gente!
       </p>
-      <button [routerLink]="['/']" class="submit-button">Eu entendo</button>
+      <button (click)="efetuarCadastro()" class="submit-button">
+        Eu entendo
+      </button>
     </div>
   </div>
 </section>
@@ -69,7 +71,9 @@
         ></textarea>
       </div>
 
-      <button class="submit-button">Efetuar Agendamento</button>
+      <button class="submit-button" (click)="mostrarMensagem()">
+        Efetuar Agendamento
+      </button>
     </form>
   </section>
 </div>
