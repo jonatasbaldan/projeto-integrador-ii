@@ -16,6 +16,7 @@ import { CompanyMenuComponent } from './components/company-menu/company-menu.com
 import { MakeScheduleComponent } from './components/pages/make-schedule/make-schedule.component';
 import { SmallTableMobileComponent } from './components/small-table-mobile/small-table-mobile.component';
 import { TableMobileComponent } from './components/table-mobile/table-mobile.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,13 +33,10 @@ import { TableMobileComponent } from './components/table-mobile/table-mobile.com
     CompanyMenuComponent,
     MakeScheduleComponent,
     SmallTableMobileComponent,
-    TableMobileComponent
+    TableMobileComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

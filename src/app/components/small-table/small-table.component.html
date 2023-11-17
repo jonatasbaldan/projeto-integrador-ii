@@ -8,5 +8,7 @@
       <td *ngFor="let rowColumn of row">{{ rowColumn }}</td>
     </tr>
   </table>
-  <a [href]="link" class="link">{{ linkName }}<img class="svg" src="../../../assets/arrow.svg"></a>
+  <a [routerLink]="link" class="link"
+    >{{ linkName }}<img class="svg" src="../../../assets/arrow.svg"
+  /></a>
 </section>

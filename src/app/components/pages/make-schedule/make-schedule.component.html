@@ -10,15 +10,15 @@
         >
         Qualquer dúvidas, por favor, entre em contato com a gente!
       </p>
-      <button class="submit-button">Eu entendo</button>
+      <button [routerLink]="['/']" class="submit-button">Eu entendo</button>
     </div>
   </div>
 </section>
 
-<app-company-menu class="logo"></app-company-menu>
+<app-company-menu></app-company-menu>
 <div class="make-schedule">
   <section class="section">
-    <a href="https://" class="link_back">
+    <a [routerLink]="['/']" class="link_back">
       <img
         class="arrow"
         src="../../../../assets/arrow-left.svg"

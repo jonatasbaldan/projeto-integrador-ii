@@ -4,11 +4,12 @@
   display: flex;
   justify-content: flex-start;
   margin-bottom: 30px;
+  margin-top: 60px;
 }
 
 @media screen and (max-width: 425px) {
   .company-menu {
-    margin-left: 20px;
+    margin-left: 25px;
   }
 }
 
