@@ -23,3 +23,13 @@
 .link__image {
   width: 18px;
 }
+
+@media screen and (max-width: 430px) {
+  .search__input {
+    width: 280px;
+  }
+
+  .search__link {
+    left: 205px;
+  }
+}
