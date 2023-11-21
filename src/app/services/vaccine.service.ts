@@ -10,33 +10,16 @@ import { API_URL } from '../properties';
 export class VaccineService {
   private vacinas: Vacina[] = [];
 
-  constructor(private http: HttpClient, private auth: AuthService) {
+  constructor(private http: HttpClient, private auth: AuthService) {}
+
+  getVacinasRequest() {
     const FULL_URL = `${API_URL}/vacinas`;
 
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.auth.getAuthToken()}`,
     });
 
-    this.http.get(FULL_URL, { headers: headers }).subscribe({
-      next: (res) => {
-        const responseString: string = JSON.stringify(res);
-        const responseJson: any = JSON.parse(responseString);
-        responseJson.content.forEach((element: Vacina) => {
-          this.vacinas.push(element);
-        });
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('complete');
-      },
-    });
-  }
-
-  getVacinas(): Vacina[] {
-    console.log(this.vacinas);
-    return this.vacinas;
+    return this.http.get(FULL_URL, { headers: headers });
   }
 
   getVacinasMarcadas(): Vacina[] {

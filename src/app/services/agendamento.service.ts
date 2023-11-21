@@ -7,35 +7,25 @@ import { AuthService } from './AuthService';
 @Injectable({
   providedIn: 'root',
 })
-export class AgendamentoService {
+export class AgendamentoService implements OnInit {
   private agendamentos: Agendamento[] = [];
 
-  constructor(private http: HttpClient, private auth: AuthService) {
+  constructor(private http: HttpClient, private auth: AuthService) {}
+
+  ngOnInit() {}
+
+  getAgendamentos(): Agendamento[] {
+    return this.agendamentos;
+  }
+
+  getAgendamentosRequest() {
     const FULL_URL = `${API_URL}/agendamento`;
 
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.auth.getAuthToken()}`,
     });
 
-    this.http.get(FULL_URL, { headers: headers }).subscribe({
-      next: (res) => {
-        const responseString: string = JSON.stringify(res);
-        const responseJson: any = JSON.parse(responseString);
-        responseJson.content.forEach((element: Agendamento) => {
-          this.agendamentos.push(element);
-        });
-      },
-      error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('complete');
-      },
-    });
-  }
-
-  getAgendamentos(): Agendamento[] {
-    return this.agendamentos;
+    return this.http.get(FULL_URL, { headers: headers });
   }
 
   getAgendamentosMarcados(): Agendamento[] {

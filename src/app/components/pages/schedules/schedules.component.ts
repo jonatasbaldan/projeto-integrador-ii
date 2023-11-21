@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Agendamento } from 'src/app/models/Agendamento';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
+import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 
 @Component({
   selector: 'app-schedules',
@@ -11,18 +12,41 @@ export class SchedulesComponent implements OnInit {
   isDesktop = false;
   isMobile = false;
   agendamentos: string = '';
+  private agendamentosList: Agendamento[] = [];
 
-  constructor(private agendamentoService: AgendamentoService) {
-    this.agendamentos = this.arrayObjectsToStringWithBrackets(
-      this.agendamentoService.getAgendamentos()
-    );
-    console.log('asdf' + this.agendamentos);
-  }
+  constructor(
+    private agendamentoService: AgendamentoService,
+    private arrayUtils: ArrayUtilsService
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
+    console.log('hello from ng on init');
     this.isDesktop = window.innerWidth >= 768;
     this.isMobile = window.innerWidth < 768;
+
+    this.agendamentoService.getAgendamentosRequest().subscribe({
+      next: (res) => {
+        const responseString: string = JSON.stringify(res);
+        const responseJson: any = JSON.parse(responseString);
+        responseJson.content.forEach((element: Agendamento) => {
+          this.agendamentosList.push(element);
+        });
+        this.agendamentos = this.arrayUtils.arrayObjectsToStringWithBrackets(
+          this.agendamentosList
+        );
+      },
+
+      error: (err) => {
+        console.log(err);
+      },
+
+      complete: () => {
+        console.log('complete');
+      },
+    });
+
+    console.log('AgendamentosList: ' + this.agendamentosList);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -32,12 +56,7 @@ export class SchedulesComponent implements OnInit {
   }
 
   getAllAgendamentos(): string {
-    console.log('hero');
-    console.log(this.agendamentos.toString());
-    return this.agendamentos.toString();
-  }
-
-  arrayObjectsToStringWithBrackets(arr: Agendamento[]): string {
-    return '[' + arr.map((obj) => '[' + Object.values(obj) + ']') + ']';
+    console.log('getAllAgendamentos' + this.agendamentos);
+    return this.agendamentos;
   }
 }

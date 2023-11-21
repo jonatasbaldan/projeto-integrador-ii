@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Vacina } from 'src/app/models/Vacina';
 import { VaccineService } from 'src/app/services/vaccine.service';
+import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 
 @Component({
   selector: 'app-vaccines',
@@ -11,18 +12,38 @@ export class VaccinesComponent implements OnInit {
   isDesktop = false;
   isMobile = false;
   vacinas: string = '';
+  private vacinasList: Vacina[] = [];
 
-  constructor(private vaccineService: VaccineService) {
-    this.vacinas = this.arrayObjectsToStringWithBrackets(
-      this.vaccineService.getVacinas()
-    );
-    console.log('asdf' + this.vacinas);
-  }
+  constructor(
+    private vaccineService: VaccineService,
+    private arrayUtils: ArrayUtilsService
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
     this.isDesktop = window.innerWidth >= 768;
     this.isMobile = window.innerWidth < 768;
+
+    this.vaccineService.getVacinasRequest().subscribe({
+      next: (res) => {
+        const responseString: string = JSON.stringify(res);
+        const responseJson: any = JSON.parse(responseString);
+        responseJson.content.forEach((element: Vacina) => {
+          this.vacinasList.push(element);
+        });
+        this.vacinas = this.arrayUtils.arrayObjectsToStringWithBrackets(
+          this.vacinasList
+        );
+      },
+
+      error: (err) => {
+        console.log(err);
+      },
+
+      complete: () => {
+        console.log('complete');
+      },
+    });
   }
 
   @HostListener('window:resize', ['$event'])
@@ -32,15 +53,6 @@ export class VaccinesComponent implements OnInit {
   }
 
   getAllVacinas(): string {
-    console.log('hero');
-    console.log(this.vacinas.toString());
     return this.vacinas.toString();
-  }
-
-  arrayObjectsToStringWithBrackets(arr: Vacina[]): string {
-    console.log(
-      'hero' + '[' + arr.map((obj) => Object.values(obj)).join(', ') + ']'
-    );
-    return '[' + arr.map((obj) => '[' + Object.values(obj) + ']') + ']';
   }
 }

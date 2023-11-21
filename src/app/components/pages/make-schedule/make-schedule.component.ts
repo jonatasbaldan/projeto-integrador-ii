@@ -13,10 +13,11 @@ export class MakeScheduleComponent {
 
   efetuarCadastro() {
     this.modalClasses = 'modal --is-disable';
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 
-  mostrarMensagem() {
+  mostrarMensagem(event: any) {
+    event.preventDefault();
     this.modalClasses = 'modal --is-enable';
   }
 }

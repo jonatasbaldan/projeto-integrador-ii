@@ -7,8 +7,10 @@
       <tr *ngFor="let row of rows">
         <td>{{ row[0] }}</td>
         <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-        <td [ngClass]="row[3].toLowerCase()">{{ row[3].toLowerCase() }}</td>
+        <td>{{ data.formatDate(row[2]) }}</td>
+        <td [ngClass]="stringUtils.toLowerCase(row[3])">
+          {{ stringUtils.toLowerCase(row[3]) }}
+        </td>
       </tr>
     </table>
   </div>
@@ -20,8 +22,10 @@
       <tr *ngFor="let row of rows">
         <td>{{ row[0] }}</td>
         <td>{{ row[1] }}</td>
-        <td>{{ row[2] }}</td>
-        <td [ngClass]="row[3].toLowerCase()">{{ row[3].toLowerCase() }}</td>
+        <td>{{ data.formatDate(row[2]) }}</td>
+        <td [ngClass]="stringUtils.toLowerCase(row[3])">
+          {{ stringUtils.toLowerCase(row[3]) }}
+        </td>
       </tr>
     </table>
   </div>

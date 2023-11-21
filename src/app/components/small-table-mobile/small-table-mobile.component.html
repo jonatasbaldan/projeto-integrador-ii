@@ -5,7 +5,7 @@
       <p class="name">{{ row[0] }}</p>
       <p class="type">{{ row[1] }}</p>
     </div>
-    <div class="data">{{ row[2] }}</div>
+    <div class="data">{{ dataUtils.formatDate(row[2]) }}</div>
   </div>
   <a [href]="link" class="link"
     >{{ linkName }}<img class="svg" src="../../../assets/arrow.svg"

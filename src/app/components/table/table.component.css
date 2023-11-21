@@ -37,3 +37,7 @@ td:first-child,
 .pendente {
   color: var(--orange);
 }
+
+.text-center {
+  text-align: center;
+}

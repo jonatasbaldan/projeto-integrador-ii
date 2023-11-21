@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataUtilsService } from 'src/app/utils/data-utils.service';
+import { StringUtilsService } from 'src/app/utils/string-utils.service';
 
 @Component({
   selector: 'app-table-mobile',
@@ -20,7 +22,7 @@ export class TableMobileComponent implements OnInit {
           .trim()
           .replace('[', '')
           .replace(']', '')
-          .split(', ')
+          .split(',')
       );
     },
   })
@@ -32,7 +34,10 @@ export class TableMobileComponent implements OnInit {
   })
   tableType: string = '';
 
-  constructor() {}
+  constructor(
+    protected dataUtils: DataUtilsService,
+    protected stringUtils: StringUtilsService
+  ) {}
 
   ngOnInit(): void {}
 }

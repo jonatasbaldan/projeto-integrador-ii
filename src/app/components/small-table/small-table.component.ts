@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataUtilsService } from 'src/app/utils/data-utils.service';
 
 @Component({
   selector: 'app-small-table',
@@ -46,7 +47,7 @@ export class SmallTableComponent implements OnInit {
   })
   linkName: string = '';
 
-  constructor() {}
+  constructor(protected dataUtils: DataUtilsService) {}
 
   ngOnInit(): void {}
 }

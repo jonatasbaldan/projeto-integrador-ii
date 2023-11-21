@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DataUtilsService } from 'src/app/utils/data-utils.service';
+import { StringUtilsService } from 'src/app/utils/string-utils.service';
 
 @Component({
   selector: 'app-table',
@@ -40,7 +42,10 @@ export class TableComponent implements OnInit {
   })
   tableType: string = '';
 
-  constructor() {}
+  constructor(
+    public stringUtils: StringUtilsService,
+    public data: DataUtilsService
+  ) {}
 
   ngOnInit(): void {}
 }

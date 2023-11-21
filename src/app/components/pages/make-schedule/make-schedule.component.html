@@ -36,8 +36,8 @@
           <label for="animal" class="form__label">Nome do pet</label>
           <select name="animal" id="animal" class="form__input">
             <option value="bolinha">Bolinha</option>
-            <option value="cadusa">Cadusa</option>
-            <option value="Maria">Maria</option>
+            <option value="rex">Rex</option>
+            <option value="totó">Totó</option>
           </select>
         </div>
 
@@ -71,7 +71,7 @@
         ></textarea>
       </div>
 
-      <button class="submit-button" (click)="mostrarMensagem()">
+      <button class="submit-button" (click)="mostrarMensagem($event)">
         Efetuar Agendamento
       </button>
     </form>

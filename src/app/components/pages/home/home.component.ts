@@ -1,7 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Agendamento } from 'src/app/models/Agendamento';
+import { Vacina } from 'src/app/models/Vacina';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { VaccineService } from 'src/app/services/vaccine.service';
-import { ArrayUtils } from 'src/app/utils/ArrayUtils';
+import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 
 @Component({
   selector: 'app-home',
@@ -12,26 +15,29 @@ export class HomeComponent implements OnInit {
   isDesktop = false;
   isMobile = false;
 
-  agendamentosMarcados: string = '';
-  vacinasMarcadas: string = '';
+  agendamentosMarcadosList: Agendamento[] = [];
+  vacinasMarcadasList: Vacina[] = [];
 
   constructor(
     private agendamentoService: AgendamentoService,
-    private vacinaService: VaccineService
-  ) {
-    this.agendamentosMarcados = ArrayUtils.arrayObjectsToStringWithBrackets(
-      this.agendamentoService.getAgendamentosMarcados()
-    );
-
-    this.vacinasMarcadas = ArrayUtils.arrayObjectsToStringWithBrackets(
-      this.vacinaService.getVacinasMarcadas()
-    );
-  }
+    private vacinaService: VaccineService,
+    private arrayUtils: ArrayUtilsService
+  ) {}
 
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
     this.isDesktop = window.innerWidth >= 768;
     this.isMobile = window.innerWidth < 768;
+
+    this.getServicos(
+      this.agendamentoService.getAgendamentosRequest(),
+      this.agendamentosMarcadosList
+    );
+
+    this.getServicos(
+      this.vacinaService.getVacinasRequest(),
+      this.vacinasMarcadasList
+    );
   }
 
   @HostListener('window:resize', ['$event'])
@@ -41,12 +47,46 @@ export class HomeComponent implements OnInit {
   }
 
   getVacinas(): string {
-    console.log(this.vacinasMarcadas);
-    return this.vacinasMarcadas.toString();
+    const vacinasMarcadas: Vacina[] = [];
+    this.vacinasMarcadasList.forEach((element) => {
+      if (element.situacao === 'AGENDADO') vacinasMarcadas.push(element);
+    });
+
+    return this.arrayUtils.arrayObjectsToStringWithBrackets(vacinasMarcadas);
   }
 
   getAgendamentos(): string {
-    console.log(this.vacinasMarcadas);
-    return this.agendamentosMarcados.toString();
+    const agendamentosMarcados: Agendamento[] = [];
+    this.agendamentosMarcadosList.forEach((element) => {
+      if (element.situacao === 'AGENDADO') agendamentosMarcados.push(element);
+    });
+
+    return this.arrayUtils.arrayObjectsToStringWithBrackets(
+      agendamentosMarcados
+    );
+  }
+
+  getServicos(
+    callback: Observable<Object>,
+    servicosList: Vacina[] | Agendamento[]
+  ) {
+    callback.subscribe({
+      next: (res) => {
+        const responseString: string = JSON.stringify(res);
+        const responseJson: any = JSON.parse(responseString);
+        responseJson.content.forEach((element: Agendamento) => {
+          console.log(element);
+          servicosList.push(element);
+        });
+      },
+
+      error: (err) => {
+        console.log(err);
+      },
+
+      complete: () => {
+        console.log('complete');
+      },
+    });
   }
 }

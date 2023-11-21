@@ -5,8 +5,10 @@
         <p class="name">{{ row[0] }}</p>
         <p class="type">{{ row[1] }}</p>
       </div>
-      <div [ngClass]="row[3]">{{ row[3] }}</div>
-      <div class="data">{{ row[2] }}</div>
+      <div [ngClass]="stringUtils.toLowerCase(row[3])">
+        {{ stringUtils.toLowerCase(row[3]) }}
+      </div>
+      <div class="data">{{ dataUtils.formatDate(row[2]) }}</div>
     </div>
   </section>
   <section class="section" *ngSwitchCase="'vaccine'">
@@ -15,7 +17,7 @@
         <p class="name">{{ row[0] }}</p>
         <p class="type">{{ row[1] }}</p>
       </div>
-      <div class="data">{{ row[2] }}</div>
+      <div class="data">{{ dataUtils.formatDate(row[2]) }}</div>
     </div>
   </section>
 </div>
