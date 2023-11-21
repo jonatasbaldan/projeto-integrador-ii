@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Agendamento } from 'src/app/models/Agendamento';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
-import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 
 @Component({
   selector: 'app-schedules',
@@ -11,13 +10,9 @@ import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 export class SchedulesComponent implements OnInit {
   isDesktop = false;
   isMobile = false;
-  agendamentos: string = '';
-  private agendamentosList: Agendamento[] = [];
+  agendamentos: Agendamento[] = [];
 
-  constructor(
-    private agendamentoService: AgendamentoService,
-    private arrayUtils: ArrayUtilsService
-  ) {}
+  constructor(private agendamentoService: AgendamentoService) {}
 
   @HostListener('window:resize', ['$event'])
   ngOnInit(): void {
@@ -30,11 +25,8 @@ export class SchedulesComponent implements OnInit {
         const responseString: string = JSON.stringify(res);
         const responseJson: any = JSON.parse(responseString);
         responseJson.content.forEach((element: Agendamento) => {
-          this.agendamentosList.push(element);
+          this.agendamentos.push(element);
         });
-        this.agendamentos = this.arrayUtils.arrayObjectsToStringWithBrackets(
-          this.agendamentosList
-        );
       },
 
       error: (err) => {
@@ -45,8 +37,6 @@ export class SchedulesComponent implements OnInit {
         console.log('complete');
       },
     });
-
-    console.log('AgendamentosList: ' + this.agendamentosList);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -55,7 +45,7 @@ export class SchedulesComponent implements OnInit {
     this.isMobile = window.innerWidth < 768;
   }
 
-  getAllAgendamentos(): string {
+  getAllAgendamentos(): Agendamento[] {
     console.log('getAllAgendamentos' + this.agendamentos);
     return this.agendamentos;
   }

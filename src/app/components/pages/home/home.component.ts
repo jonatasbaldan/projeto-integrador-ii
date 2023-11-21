@@ -4,7 +4,6 @@ import { Agendamento } from 'src/app/models/Agendamento';
 import { Vacina } from 'src/app/models/Vacina';
 import { AgendamentoService } from 'src/app/services/agendamento.service';
 import { VaccineService } from 'src/app/services/vaccine.service';
-import { ArrayUtilsService } from 'src/app/utils/array-utils.service';
 
 @Component({
   selector: 'app-home',
@@ -20,8 +19,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private agendamentoService: AgendamentoService,
-    private vacinaService: VaccineService,
-    private arrayUtils: ArrayUtilsService
+    private vacinaService: VaccineService
   ) {}
 
   @HostListener('window:resize', ['$event'])
@@ -46,24 +44,22 @@ export class HomeComponent implements OnInit {
     this.isMobile = window.innerWidth < 768;
   }
 
-  getVacinas(): string {
+  getVacinas(): Vacina[] {
     const vacinasMarcadas: Vacina[] = [];
     this.vacinasMarcadasList.forEach((element) => {
       if (element.situacao === 'AGENDADO') vacinasMarcadas.push(element);
     });
 
-    return this.arrayUtils.arrayObjectsToStringWithBrackets(vacinasMarcadas);
+    return vacinasMarcadas;
   }
 
-  getAgendamentos(): string {
+  getAgendamentos(): Agendamento[] {
     const agendamentosMarcados: Agendamento[] = [];
     this.agendamentosMarcadosList.forEach((element) => {
       if (element.situacao === 'AGENDADO') agendamentosMarcados.push(element);
     });
 
-    return this.arrayUtils.arrayObjectsToStringWithBrackets(
-      agendamentosMarcados
-    );
+    return agendamentosMarcados;
   }
 
   getServicos(
@@ -74,8 +70,7 @@ export class HomeComponent implements OnInit {
       next: (res) => {
         const responseString: string = JSON.stringify(res);
         const responseJson: any = JSON.parse(responseString);
-        responseJson.content.forEach((element: Agendamento) => {
-          console.log(element);
+        responseJson.content.forEach((element: Agendamento & Vacina) => {
           servicosList.push(element);
         });
       },

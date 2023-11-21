@@ -5,9 +5,9 @@
       <th *ngFor="let head of tableHeads">{{ head }}</th>
     </tr>
     <tr *ngFor="let row of rows">
-      <td>{{ row[0] }}</td>
-      <td>{{ row[1] }}</td>
-      <td>{{ dataUtils.formatDate(row[2]) }}</td>
+      <td>{{ row.nomeAnimal }}</td>
+      <td>{{ row.tipoAgendamento || row.nome }}</td>
+      <td>{{ dataUtils.formatDate(row.data) }}</td>
     </tr>
   </table>
   <a [routerLink]="link" class="link"

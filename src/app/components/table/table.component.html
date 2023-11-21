@@ -5,11 +5,11 @@
         <th *ngFor="let head of tableHeads">{{ head }}</th>
       </tr>
       <tr *ngFor="let row of rows">
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ data.formatDate(row[2]) }}</td>
-        <td [ngClass]="stringUtils.toLowerCase(row[3])">
-          {{ stringUtils.toLowerCase(row[3]) }}
+        <td>{{ row.nomeAnimal }}</td>
+        <td>{{ row.nome }}</td>
+        <td>{{ data.formatDate(row.data) }}</td>
+        <td [ngClass]="stringUtils.toLowerCase(row.situacao)">
+          {{ stringUtils.toLowerCase(row.situacao) }}
         </td>
       </tr>
     </table>
@@ -20,11 +20,11 @@
         <th *ngFor="let head of tableHeads">{{ head }}</th>
       </tr>
       <tr *ngFor="let row of rows">
-        <td>{{ row[0] }}</td>
-        <td>{{ row[1] }}</td>
-        <td>{{ data.formatDate(row[2]) }}</td>
-        <td [ngClass]="stringUtils.toLowerCase(row[3])">
-          {{ stringUtils.toLowerCase(row[3]) }}
+        <td>{{ row.nomeAnimal }}</td>
+        <td>{{ row.tipoAgendamento }}</td>
+        <td>{{ data.formatDate(row.data) }}</td>
+        <td [ngClass]="stringUtils.toLowerCase(row.situacao)">
+          {{ stringUtils.toLowerCase(row.situacao) }}
         </td>
       </tr>
     </table>

@@ -2,22 +2,22 @@
   <section class="section" *ngSwitchCase="'schedule'">
     <div class="table" *ngFor="let row of rows">
       <div class="info">
-        <p class="name">{{ row[0] }}</p>
-        <p class="type">{{ row[1] }}</p>
+        <p class="name">{{ row.nomeAnimal }}</p>
+        <p class="type">{{ row.tipoAgendamento }}</p>
       </div>
-      <div [ngClass]="stringUtils.toLowerCase(row[3])">
-        {{ stringUtils.toLowerCase(row[3]) }}
+      <div [ngClass]="stringUtils.toLowerCase(row.situacao)">
+        {{ stringUtils.toLowerCase(row.situacao) }}
       </div>
-      <div class="data">{{ dataUtils.formatDate(row[2]) }}</div>
+      <div class="data">{{ dataUtils.formatDate(row.data) }}</div>
     </div>
   </section>
   <section class="section" *ngSwitchCase="'vaccine'">
     <div class="table" *ngFor="let row of rows">
       <div class="info">
-        <p class="name">{{ row[0] }}</p>
-        <p class="type">{{ row[1] }}</p>
+        <p class="name">{{ row.nomeAnimal }}</p>
+        <p class="type">{{ row.nome }}</p>
       </div>
-      <div class="data">{{ dataUtils.formatDate(row[2]) }}</div>
+      <div class="data">{{ dataUtils.formatDate(row.data) }}</div>
     </div>
   </section>
 </div>

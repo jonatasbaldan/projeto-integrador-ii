@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Agendamento } from 'src/app/models/Agendamento';
+import { Vacina } from 'src/app/models/Vacina';
 import { DataUtilsService } from 'src/app/utils/data-utils.service';
 
 @Component({
@@ -20,23 +22,8 @@ export class SmallTableComponent implements OnInit {
 
   @Input({
     required: true,
-    transform: (value: string) => {
-      let valuesTemp: string[] = value
-        .substring(1, value.length - 1)
-        .replaceAll("'", '')
-        .split('],');
-
-      return valuesTemp.map((v) =>
-        v
-          .substring(1, value.length - 1)
-          .trim()
-          .replace('[', '')
-          .replace(']', '')
-          .split(',')
-      );
-    },
   })
-  rows: string[][] = [];
+  rows: Vacina[] | Agendamento[] | any[] = [];
 
   @Input({ required: true })
   link: string = '';
