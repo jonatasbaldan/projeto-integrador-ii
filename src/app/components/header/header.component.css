@@ -10,8 +10,14 @@
   font-weight: 500;
 }
 
+.header__welcome__exit {
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
 .header__welcome__exit:hover {
   cursor: pointer;
+  color: #cb6210;
 }
 
 .header__options {
@@ -45,9 +51,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
 }
 
-.header__link {
+.header__small-button:hover .header__icon {
+  background-color: #f3b98d;
+}
+
+.header .header__link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,6 +68,12 @@
 .header__small-button__text {
   margin-top: 12px;
   white-space: nowrap;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__small-button:hover .header__small-button__text {
+  color: #cb6210;
 }
 
 .header__button {
@@ -75,12 +93,24 @@
   background-position: 255px -0px;
   gap: 26px;
   padding: 0 28px;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__button:hover .header__button__link {
+  background-color: #ff8220;
 }
 
 .header__button__image {
   width: 80px;
   position: relative;
   bottom: 14px;
+  transition: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__button:hover .header__button__image {
+  bottom: 28px;
 }
 
 .header__button__text {

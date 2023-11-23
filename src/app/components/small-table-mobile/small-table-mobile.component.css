@@ -9,7 +9,7 @@
 .table {
   display: flex;
   justify-content: space-between;
-  border-bottom: solid 1px var(--gray);
+  border-bottom: solid 1px var(--light-gray);
   padding: 18px 0;
 }
 
