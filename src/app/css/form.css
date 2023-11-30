@@ -38,6 +38,14 @@
   cursor: pointer;
 }
 
+.form__button:disabled {
+  background-color: #ffc190;
+}
+
+.form__button:disabled.form__button:hover {
+  cursor: default;
+}
+
 .form__message {
   position: absolute;
   margin-top: 9px;

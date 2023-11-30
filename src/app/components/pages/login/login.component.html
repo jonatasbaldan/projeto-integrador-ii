@@ -7,7 +7,7 @@
   <p class="login__text">
     Entre com o cpf e senha fornecido pelo <span class="bold">petshop</span>!
   </p>
-  <form [formGroup]="login" (ngSubmit)="logar()" class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="logar()" class="form">
     <div class="form__div">
       <label for="cpf" class="form__label">cpf</label>
       <input
@@ -58,6 +58,8 @@
       </div>
     </div>
     <p class="form__message" *ngIf="hasLoginError">Cpf ou senha incorretos.</p>
-    <button type="submit" class="form__button">Entrar</button>
+    <button type="submit" class="form__button" [disabled]="!loginForm.valid">
+      Entrar
+    </button>
   </form>
 </section>

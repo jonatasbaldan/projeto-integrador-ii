@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   currentStyles: Record<string, string> = {};
 
-  login = new FormGroup({
+  loginForm = new FormGroup({
     cpf: new FormControl('', {
       validators: [
         Validators.required,
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
   }
 
   logar() {
-    const loginSchema: Login = this.login.value as Login;
+    const loginSchema: Login = this.loginForm.value as Login;
 
     this.controller.login(loginSchema.cpf, loginSchema.senha);
 
@@ -61,10 +61,10 @@ export class LoginComponent implements OnInit {
   }
 
   get cpf() {
-    return this.login.get('cpf');
+    return this.loginForm.get('cpf');
   }
 
   get senha() {
-    return this.login.get('senha');
+    return this.loginForm.get('senha');
   }
 }
