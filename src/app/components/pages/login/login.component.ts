@@ -21,11 +21,11 @@ export class LoginComponent implements OnInit {
         Validators.minLength(11),
         Validators.maxLength(11),
       ],
-      updateOn: 'blur',
+      updateOn: 'change',
     }),
     senha: new FormControl('', {
       validators: [Validators.required, Validators.minLength(4)],
-      updateOn: 'blur',
+      updateOn: 'change',
     }),
   });
 
