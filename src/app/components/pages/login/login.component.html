@@ -59,7 +59,13 @@
     </div>
     <p class="form__message" *ngIf="hasLoginError">Cpf ou senha incorretos.</p>
     <button type="submit" class="form__button" [disabled]="!loginForm.valid">
-      Entrar
+      <span class="btn__text" [style.display]="isLoading ? 'none' : 'block'"
+        >Entrar</span
+      >
+      <span
+        class="btn__loading"
+        [style.display]="isLoading ? 'block' : 'none'"
+      ></span>
     </button>
   </form>
 </section>

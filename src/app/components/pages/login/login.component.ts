@@ -11,6 +11,7 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class LoginComponent implements OnInit {
   hasLoginError: boolean = false;
+  isLoading: boolean = false;
 
   currentStyles: Record<string, string> = {};
 
@@ -43,12 +44,13 @@ export class LoginComponent implements OnInit {
     const loginSchema: Login = this.loginForm.value as Login;
 
     this.controller.login(loginSchema.cpf, loginSchema.senha);
-
+    this.isLoading = true;
     this.controller.getStatus().subscribe({
       next: (res) => {
         console.log(res);
         if (res === LoginStatus.FAILED) {
           this.hasLoginError = true;
+          this.isLoading = false;
         }
         this.setCurrentStyles();
       },

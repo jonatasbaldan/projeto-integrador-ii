@@ -60,3 +60,19 @@
 .ng-invalid:not(form).ng-touched {
   border: solid 1px #a00c0c !important;
 }
+
+.btn__loading {
+  margin: 0 auto;
+  width: 16px;
+  height: 16px;
+  border: solid 2px #fd9340;
+  border-right-color: #e96802;
+  border-radius: 50%;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
