@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../properties';
 import { Login } from '../models/Login';
 import { Router } from '@angular/router';
+import { LoginStatus } from '../models/login-status';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -14,30 +16,34 @@ export class LoginService {
     senha: '',
   };
 
+  status: Subject<LoginStatus> = new Subject<LoginStatus>();
+
   constructor(
     private httpClient: HttpClient,
     private authService: AuthService,
     private router: Router
   ) {}
 
+  getStatus(): Observable<LoginStatus> {
+    return this.status.asObservable();
+  }
+
   login(cpf: string = '', senha: string = '') {
-    console.log('hello');
-    const loginPrefix: string = API_URL + '/login';
+    const FULL_URL: string = API_URL + '/login';
+
     this.loginData.cpf = cpf;
     this.loginData.senha = senha;
-    this.httpClient.post(loginPrefix, this.loginData).subscribe({
+
+    this.httpClient.post(FULL_URL, this.loginData).subscribe({
       next: (res) => {
         const resToString: string = JSON.stringify(res);
         const resToJson: any = JSON.parse(resToString);
         this.authService.setAuthToken(resToJson.token);
+        this.status.next(LoginStatus.SUCCESS);
         this.router.navigate(['/inicio']);
-        console.log(res);
       },
       error: (err) => {
-        console.log(err);
-      },
-      complete: () => {
-        console.log('complete');
+        this.status.next(LoginStatus.FAILED);
       },
     });
   }
