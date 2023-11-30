@@ -5,7 +5,7 @@ import { API_URL } from '../properties';
 import { Login } from '../models/Login';
 import { Router } from '@angular/router';
 import { LoginStatus } from '../models/login-status';
-import { Observable, Subject, Subscription } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
