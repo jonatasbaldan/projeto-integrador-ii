@@ -1,0 +1,51 @@
+.form__input {
+  padding: 29px 14px 9px 14px;
+  font-size: 16px;
+  border-radius: 14px;
+  border: solid 1px var(--gray);
+  display: block;
+  color: #1e1e1e;
+  max-width: 360px;
+  width: 100%;
+}
+
+.form__input::placeholder {
+  color: #939393;
+}
+
+.form__label {
+  font-size: 14px;
+  position: absolute;
+  margin-left: 14px;
+  margin-top: 7px;
+  color: var(--orange);
+}
+
+.form__button {
+  background-color: var(--orange);
+  padding: 14px;
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  max-width: 360px;
+  width: 100%;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.form__button:hover {
+  cursor: pointer;
+}
+
+.form__message {
+  position: absolute;
+  margin-top: 9px;
+  color: #a00c0c;
+  font-size: 13px;
+}
+
+.ng-invalid:not(form).ng-dirty,
+.ng-invalid:not(form).ng-touched {
+  border: solid 1px #a00c0c !important;
+}
