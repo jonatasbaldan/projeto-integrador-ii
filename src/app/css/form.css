@@ -32,9 +32,12 @@
   width: 100%;
   font-size: 14px;
   letter-spacing: 1px;
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
 }
 
 .form__button:hover {
+  background-color: #ff8220;
   cursor: pointer;
 }
 
