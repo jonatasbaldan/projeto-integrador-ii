@@ -5,7 +5,7 @@ import { VaccineService } from 'src/app/services/vaccine.service';
 @Component({
   selector: 'app-vaccines',
   templateUrl: './vaccines.component.html',
-  styleUrls: ['./vaccines.component.css', '../../section.css'],
+  styleUrls: ['./vaccines.component.css', '../../../css/section.css'],
 })
 export class VaccinesComponent implements OnInit {
   isDesktop = false;

@@ -17,6 +17,8 @@ import { MakeScheduleComponent } from './components/pages/make-schedule/make-sch
 import { SmallTableMobileComponent } from './components/small-table-mobile/small-table-mobile.component';
 import { TableMobileComponent } from './components/table-mobile/table-mobile.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgStyle } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,13 @@ import { HttpClientModule } from '@angular/common/http';
     SmallTableMobileComponent,
     TableMobileComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgStyle,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

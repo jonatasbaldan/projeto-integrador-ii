@@ -6,7 +6,7 @@ import { DataUtilsService } from 'src/app/utils/data-utils.service';
 @Component({
   selector: 'app-small-table',
   templateUrl: './small-table.component.html',
-  styleUrls: ['./small-table.component.css', '../section.css'],
+  styleUrls: ['./small-table.component.css', '../../css/section.css'],
 })
 export class SmallTableComponent implements OnInit {
   @Input({ required: true })

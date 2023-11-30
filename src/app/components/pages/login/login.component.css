@@ -22,19 +22,10 @@
   width: 70%;
 }
 
-.login__button {
-  background-color: var(--orange);
-  padding: 14px;
-  color: var(--white);
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  max-width: 360px;
-  margin-top: 60px;
-  font-size: 14px;
-  letter-spacing: 1px;
+.form__div {
+  margin-top: 45px;
 }
 
-.login__button:hover {
-  cursor: pointer;
+.form__button {
+  margin-top: 60px;
 }

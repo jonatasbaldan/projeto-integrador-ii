@@ -5,7 +5,7 @@ import { AgendamentoService } from 'src/app/services/agendamento.service';
 @Component({
   selector: 'app-schedules',
   templateUrl: './schedules.component.html',
-  styleUrls: ['./schedules.component.css', '../../section.css'],
+  styleUrls: ['./schedules.component.css', '../../../css/section.css'],
 })
 export class SchedulesComponent implements OnInit {
   isDesktop = false;

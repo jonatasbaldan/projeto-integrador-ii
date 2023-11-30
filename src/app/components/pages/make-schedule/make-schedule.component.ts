@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-make-schedule',
   templateUrl: './make-schedule.component.html',
-  styleUrls: ['./make-schedule.component.css', '../../section.css'],
+  styleUrls: ['./make-schedule.component.css', '../../../css/section.css'],
 })
 export class MakeScheduleComponent {
   modalClasses: string = 'modal --is-disable';

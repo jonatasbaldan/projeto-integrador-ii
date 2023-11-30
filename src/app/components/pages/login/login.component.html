@@ -7,20 +7,57 @@
   <p class="login__text">
     Entre com o cpf e senha fornecido pelo <span class="bold">petshop</span>!
   </p>
-  <form action="" class="form">
-    <app-input
-      label-name="cpf"
-      placeholder="123-456-789-01"
-      input-type="text"
-      (valor)="getCpf($event)"
-    ></app-input>
-    <app-input
-      label-name="password"
-      placeholder="*******"
-      input-type="password"
-      (valor)="getSenha($event)"
-    ></app-input>
+  <form [formGroup]="login" (ngSubmit)="logar()" class="form">
+    <div class="form__div">
+      <label for="cpf" class="form__label">cpf</label>
+      <input
+        type="text"
+        placeholder="123-456-789-01"
+        formControlName="cpf"
+        id="cpf"
+        name="cpf"
+        [ngStyle]="currentStyles"
+        class="form__input"
+        (keypress)="limparErros()"
+      />
+    </div>
+    <div *ngIf="cpf?.invalid && !hasLoginError && (cpf?.dirty || cpf?.touched)">
+      <p *ngIf="cpf?.errors?.['required']" class="form__message">
+        CPF é obrigatório.
+      </p>
+      <p
+        *ngIf="cpf?.errors?.['minlength'] || cpf?.errors?.['maxlength']"
+        class="form__message"
+      >
+        Não é um CPF válido.
+      </p>
+    </div>
+    <div class="form__div">
+      <label for="senha" class="form__label">senha</label>
+      <input
+        type="password"
+        placeholder="********"
+        formControlName="senha"
+        id="senha"
+        name="senha"
+        [ngStyle]="currentStyles"
+        class="form__input"
+        (keypress)="limparErros()"
+      />
+      <div
+        *ngIf="
+          senha?.invalid && !hasLoginError && (senha?.dirty || senha?.touched)
+        "
+      >
+        <p *ngIf="senha?.errors?.['required']" class="form__message">
+          Senha é obrigatória.
+        </p>
+        <p *ngIf="senha?.errors?.['minlength']" class="form__message">
+          Não é uma senha válida.
+        </p>
+      </div>
+    </div>
+    <p class="form__message" *ngIf="hasLoginError">Cpf ou senha incorretos.</p>
+    <button type="submit" class="form__button">Entrar</button>
   </form>
-
-  <button class="login__button" (click)="logar()">Entrar</button>
 </section>
