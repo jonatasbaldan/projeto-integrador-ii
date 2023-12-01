@@ -10,7 +10,7 @@
         >
         Qualquer dúvidas, por favor, entre em contato com a gente!
       </p>
-      <button (click)="efetuarCadastro()" class="submit-button">
+      <button (click)="efetuarAgendamento()" class="form__button">
         Eu entendo
       </button>
     </div>
@@ -30,49 +30,113 @@
     <h1 class="title">
       Efetue o <span class="--is-bold">agendamento</span> do seu pet!
     </h1>
-    <form action="https://">
-      <div class="animal-and-agendamento">
-        <div class="form__animais">
-          <label for="animal" class="form__label">Nome do pet</label>
-          <select name="animal" id="animal" class="form__input">
-            <option value="bolinha">Bolinha</option>
-            <option value="rex">Rex</option>
-            <option value="totó">Totó</option>
-          </select>
-        </div>
 
-        <div class="form__agendamento">
-          <label for="agendamento" class="form__label"
-            >Tipo de agendamento</label
+    <form
+      [formGroup]="makeScheduleForm"
+      (ngSubmit)="mostrarMensagem($event)"
+      class="form"
+    >
+      <div class="form__div">
+        <label for="animais" class="form__label">Nome do pet</label>
+        <select
+          name="animais"
+          id="animais"
+          class="form__input"
+          formControlName="animais"
+        >
+          <option value="bolinha">Bolinha</option>
+          <option value="rex" selected>Rex</option>
+          <option value="totó">Totó</option>
+        </select>
+
+        <div
+          *ngIf="
+            makeScheduleForm.controls.animais.invalid &&
+            (makeScheduleForm.controls.animais.dirty ||
+              makeScheduleForm.controls.animais.touched)
+          "
+        >
+          <p
+            *ngIf="makeScheduleForm.controls.animais.errors?.['required']"
+            class="form__message"
           >
-          <select name="agendamento" id="agendamento" class="form__input">
-            <option value="bolinha">Banho e tosa</option>
-            <option value="cadusa">Consulta</option>
-            <option value="Maria">Vacina</option>
-          </select>
+            Esse campo é obrigatório.
+          </p>
         </div>
       </div>
 
-      <app-input
-        label-name="Data do serviço"
-        input-type="date"
-        width="300px"
-        class="form__date"
-      ></app-input>
+      <div class="form__div">
+        <label for="agendamento" class="form__label">Tipo de agendamento</label>
+        <select
+          name="agendamento"
+          id="agendamento"
+          class="form__input"
+          formControlName="tipoAgendamento"
+        >
+          <option value="banho_e_tosa">Banho e tosa</option>
+          <option value="consulta" selected>Consulta</option>
+          <option value="vacina">Vacina</option>
+        </select>
 
-      <div class="form__text-area">
+        <div
+          *ngIf="
+            makeScheduleForm.controls.tipoAgendamento.invalid &&
+            (makeScheduleForm.controls.tipoAgendamento.dirty ||
+              makeScheduleForm.controls.tipoAgendamento.touched)
+          "
+        >
+          <p
+            *ngIf="makeScheduleForm.controls.tipoAgendamento.errors?.['required']"
+            class="form__message"
+          >
+            Esse campo é obrigatório.
+          </p>
+        </div>
+      </div>
+
+      <div class="form__div">
+        <label for="data" class="form__label">Data do serviço</label>
+        <input
+          type="date"
+          name="data"
+          id="data"
+          class="form__input"
+          formControlName="data"
+        />
+        <div
+          *ngIf="
+            makeScheduleForm.controls.data.invalid &&
+            (makeScheduleForm.controls.data.dirty ||
+              makeScheduleForm.controls.data.touched)
+          "
+        >
+          <p
+            *ngIf="makeScheduleForm.controls.data.errors?.['required']"
+            class="form__message"
+          >
+            Esse campo é obrigatório.
+          </p>
+        </div>
+      </div>
+
+      <div class="form__div">
         <label for="descricao" class="form__label"
           >Descrição do serviço (opcional)</label
         >
-        <textarea
-          class="form__input"
+        <input
+          type="text"
+          name="descricao"
           id="descricao"
-          placeholder="ex: Ele está com uma ferida no braço"
-        ></textarea>
+          class="form__input"
+          formControlName="descricao"
+        />
       </div>
-
-      <button class="submit-button" (click)="mostrarMensagem($event)">
-        Efetuar Agendamento
+      <button
+        type="submit"
+        class="form__button"
+        [disabled]="!makeScheduleForm.valid"
+      >
+        Agendar
       </button>
     </form>
   </section>

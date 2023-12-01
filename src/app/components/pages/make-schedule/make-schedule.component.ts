@@ -1,17 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-make-schedule',
   templateUrl: './make-schedule.component.html',
-  styleUrls: ['./make-schedule.component.css', '../../../css/section.css'],
+  styleUrls: [
+    './make-schedule.component.css',
+    '../../../css/section.css',
+    '../../../css/form.css',
+  ],
 })
-export class MakeScheduleComponent {
+export class MakeScheduleComponent implements OnInit {
   modalClasses: string = 'modal --is-disable';
+  public makeScheduleForm = new FormGroup({
+    animais: new FormControl('', {
+      validators: [Validators.required],
+      updateOn: 'change',
+    }),
+    tipoAgendamento: new FormControl('', {
+      validators: [Validators.required],
+      updateOn: 'change',
+    }),
+    data: new FormControl('', {
+      validators: [Validators.required],
+      updateOn: 'change',
+    }),
+    descricao: new FormControl('', {
+      updateOn: 'change',
+    }),
+  });
 
   constructor(private router: Router) {}
+  ngOnInit(): void {}
 
-  efetuarCadastro() {
+  efetuarAgendamento() {
     this.modalClasses = 'modal --is-disable';
     this.router.navigate(['']);
   }
